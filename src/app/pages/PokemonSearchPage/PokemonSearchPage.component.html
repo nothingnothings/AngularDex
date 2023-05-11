@@ -1,0 +1,10 @@
+<app-pokedex
+  *ngIf="!isError; else error"
+  [pokemons]="filteredPokemons"
+  [wrapperMessage]="'Procurar por um Pokémon'"
+  [isSearch]="true"
+  [isDetails]="false"
+  [isLoading]="isLoading"
+  [inputChanged]="inputChangedHandler"
+></app-pokedex>
+<ErrorComponent :errorMessage="errorMessage" #error></ErrorComponent>

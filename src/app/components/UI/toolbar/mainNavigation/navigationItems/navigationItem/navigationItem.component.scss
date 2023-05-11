@@ -1,0 +1,46 @@
+/* MAIN-HEADER__ITEM */
+.main-header__item {
+  padding: 1rem 0;
+  margin: -2rem 0;
+  transition: 0.1s all;
+  pointer-events: none;
+}
+
+.main-header__item a {
+  text-decoration: none;
+  font-family: "Lato";
+  font-weight: bold;
+  display: block;
+  font-size: 1.1rem;
+  color: var(--white);
+  pointer-events: auto;
+}
+
+.main-header__item:hover {
+  background-color: var(--light-green);
+}
+
+.main-header__item:hover > a {
+  color: var(--dark);
+}
+
+.main-header__item a.active-path {
+  pointer-events: none;
+}
+
+/* THIS SELECTOR DOESNT WORK IN - INTERNET EXPLORER 11, FIREFOX, OPERA MINI/OPERA MOBILE AND SAMSUNG INTERNET */
+
+.main-header__item:has(a.active-path) {
+  background-color: var(--white);
+  pointer-events: none;
+}
+
+.main-header__item:has(a.active-path) a {
+  color: var(--dark);
+}
+
+@media (max-width: 430px) {
+  .main-header__item a {
+    font-size: 1rem;
+  }
+}

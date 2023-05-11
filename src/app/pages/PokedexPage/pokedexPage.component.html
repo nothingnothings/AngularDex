@@ -1,0 +1,9 @@
+<app-pokedex
+  *ngIf="!errorMessage; else error"
+  [pokemons]="pokemons"
+  [wrapperMessage]="'Pokédex'"
+  [isSearch]="false"
+  [isDetails]="false"
+  [isLoading]="isLoading"
+></app-pokedex>
+<app-error-component #error></app-error-component>

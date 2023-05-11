@@ -1,0 +1,7 @@
+<ul class="main-header__item-list navbar-nav">
+  <app-navigation-item
+    *ngFor="let navItem of navItems; let index=index"
+    [link]="navItem.link"
+    [text]="navItem.text"
+  ></app-navigation-item>
+</ul>
