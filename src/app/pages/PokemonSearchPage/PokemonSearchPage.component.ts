@@ -1,16 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 
 @Component({
   templateUrl: './PokemonSearchPage.component.html',
   selector: 'app-pokemon-search-page',
 })
 export class PokemonSearchPageComponent implements OnInit {
-  @Input() link!: string;
-  @Input() text!: string;
-  @Input() imagePath!: string;
-  @Input() key!: string;
+  @Input() pokemons!: SimplePokemon[];
+  @Input() isLoading!: boolean;
+  @Input() isError!: boolean;
+  @Input() errorMessage!: string;
 
-  constructor() {}
+  constructor(public filteredPokemons: SimplePokemon[] = []) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.filteredPokemons = this.pokemons;
+  }
+
+  inputChangedHandler(event: Event) {
+    const searchedPokemon = (event.target as HTMLInputElement).value;
+    this.filteredPokemons = this.filteredPokemons.filter(
+      (pokemon: SimplePokemon) => {
+        return pokemon.name
+          .toUpperCase()
+          .includes(searchedPokemon.toUpperCase());
+      }
+    );
+  }
 }
