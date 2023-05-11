@@ -9,7 +9,7 @@ import axios, { AxiosError } from 'axios';
 })
 export class PokemonDetailsPageComponent implements OnInit {
   constructor(
-    public pokemon: null | Pokemon = null,
+    public pokemon: null | Pokemon,
     public isLoading: boolean = false,
     public detailsIsError: boolean = false,
     public detailsIsErrorMessage: string = '',

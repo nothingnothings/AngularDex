@@ -48,7 +48,7 @@
           >
             <strong class="mb-2 mb-sm-0">Habilidades:</strong>&nbsp;
             <div
-              *ngFor="abilityObject of pokemon?.abilities"
+              *ngFor="let abilityObject of pokemon?.abilities"
               class="pokemon-details-card__body-skill my-1 my-sm-0 ml-2 mr-1 px-2 py-1"
               [key]="abilityObject.ability.name"
             >
@@ -79,7 +79,7 @@
             <strong class="mb-2 mb-sm-0 text-nowrap">Formas: &nbsp;</strong>
 
             <div
-            *ngFor="formObject in pokemon!.forms"
+            *ngFor="let formObject in pokemon!.forms"
               class="pokemon-details-card__body-form text-nowrap ml-2 mr-1 px-2 py-1 my-1"
               [key]="formObject.name"
             >

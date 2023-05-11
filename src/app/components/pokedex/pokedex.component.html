@@ -8,7 +8,7 @@
   </div>
   <div class="row d-flex justify-content-center mt-5">
     <div
-      *ngFor="pokemon of pokemons"
+      *ngFor="let pokemon of pokemons"
       [key]="pokemon.name + Math.random()"
       class="col-12 col-sm-11 col-md-8 col-lg-6"
     >

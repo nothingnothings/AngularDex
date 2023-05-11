@@ -1,5 +1,3 @@
-export interface SimplePokemon {
-  name: string;
-  url: string;
-  id?: number;
+export class SimplePokemon {
+  constructor(public name: string, public url: string, public id: string) {}
 }

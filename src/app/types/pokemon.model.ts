@@ -1,22 +1,43 @@
-export interface Pokemon {
-  abilities: Ability[];
-  base_experience: number;
-  forms: Form[];
-  game_indices: Index[];
-  height: number;
-  held_items: HeldItem[];
-  id: number;
-  is_default: boolean;
-  location_area_encounters: string;
-  moves: Mfe[];
-  name: string;
-  order: number;
-  past_types: Type[];
-  species: Species;
-  sprites: Sprites;
-  stats: Stat[];
-  types: Type[];
-  weight: number;
+export class Pokemon {
+  // abilities: Ability[];
+  // base_experience: number;
+  // forms: Form[];
+  // game_indices: Index[];
+  // height: number;
+  // held_items: HeldItem[];
+  // id: number;
+  // is_default: boolean;
+  // location_area_encounters: string;
+  // moves: Mfe[];
+  // name: string;
+  // order: number;
+  // past_types: Type[];
+  // species: Species;
+  // sprites: Sprites;
+  // stats: Stat[];
+  // types: Type[];
+  // weight: number;
+
+  constructor(
+    public abilities: Ability[],
+    public base_experience: number,
+    public forms: Form[],
+    public game_indices: Index[],
+    public height: number,
+    public held_items: HeldItem[],
+    public id: number,
+    public is_default: boolean,
+    public location_area_encounters: string,
+    public moves: Mfe[],
+    public name: string,
+    public order: number,
+    public past_types: Type[],
+    public species: Species,
+    public sprites: Sprites,
+    public stats: Stat[],
+    public types: Type[],
+    public weight: number
+  ) {}
 }
 
 export interface Ability {
