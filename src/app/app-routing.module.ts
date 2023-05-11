@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PokedexPageComponent } from './pages/PokedexPage/PokedexPage.component';
-import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/PokemonDetailsPage.component';
-import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearchPage.component';
+import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
+import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
+import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 const routes: Routes = [
   {
     ////ordem das routes importa, exatamente como no REACT ROUTER
@@ -21,7 +21,6 @@ const routes: Routes = [
     path: 'pokedex/:pokemonId',
     component: PokemonDetailsPageComponent,
   },
-
   {
     path: 'search',
     component: PokemonSearchPageComponent,

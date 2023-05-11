@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 
 @Component({
-  templateUrl: './PokemonSearchPage.component.html',
+  templateUrl: './PokemonSearch.component.html',
   selector: 'app-pokemon-search-page',
 })
 export class PokemonSearchPageComponent implements OnInit {

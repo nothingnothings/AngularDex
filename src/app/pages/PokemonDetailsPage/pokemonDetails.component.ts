@@ -4,7 +4,7 @@ import { Pokemon } from 'src/app/types/pokemon.model';
 import axios, { AxiosError } from 'axios';
 
 @Component({
-  templateUrl: './pokemonDetailsPage.component.html',
+  templateUrl: './pokemonDetails.component.html',
   selector: 'app-pokemon-details-page',
 })
 export class PokemonDetailsPageComponent implements OnInit {

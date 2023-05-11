@@ -13,8 +13,8 @@
   >
     <app-pokemon-details-card [pokemon]="pokemon"></app-pokemon-details-card>
   </app-pokedex-wrapper>
-  <ErrorComponent
+  <app-error-component
     *ngIf="detailsIsError && !isLoading"
     [errorMessage]="detailsErrorMessage"
-  ></ErrorComponent>
+  ></app-error-component>
 </div>

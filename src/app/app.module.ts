@@ -15,9 +15,9 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { CardComponent } from './components/pokedex/card/card.component';
 import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pokemonDetailsCard.component';
 import { PokeSearchComponent } from './components/pokeSearch/pokeSearch.component';
-import { PokedexPageComponent } from './pages/PokedexPage/pokedexPage.component';
-import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetailsPage.component';
-import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearchPage.component';
+import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
+import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
+import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 
 @NgModule({
   declarations: [
