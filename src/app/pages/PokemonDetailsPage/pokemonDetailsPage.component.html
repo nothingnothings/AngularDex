@@ -1,18 +1,18 @@
 <div>
-  <PokedexWrapper
+  <app-pokedex-wrapper
     *ngIf="!pokemon && isLoading;"
     [isDetails]="true"
     [message]="'Quem é esse Pokémon?'"
   >
     <app-spinner></app-spinner>
-  </PokedexWrapper>
-  <PokedexWrapper
+  </app-pokedex-wrapper>
+  <app-pokedex-wrapper
   *ngIf="pokemon && !detailsIsError && !isLoading"
     [isDetails]="true"
     [message]="'Quem é esse Pokémon?'"
   >
-    <PokemonDetailsCard [pokemon]="pokemon"></PokemonDetailsCard>
-  </PokedexWrapper>
+    <app-pokemon-details-card [pokemon]="pokemon"></app-pokemon-details-card>
+  </app-pokedex-wrapper>
   <ErrorComponent
     *ngIf="detailsIsError && !isLoading"
     [errorMessage]="detailsErrorMessage"

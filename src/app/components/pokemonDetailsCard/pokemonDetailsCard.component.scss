@@ -1,0 +1,340 @@
+/* POKEMONS DETAILS CARD */
+.pokemon-details-card {
+  border-radius: 100px;
+}
+
+.pokemon-details-card__pokemon-title {
+  font-weight: bold;
+}
+
+.pokemon-details-card__image-wrapper {
+  background-color: var(--white);
+  padding: 2.5rem;
+  clip-path: circle();
+}
+
+.pokemon-details-card__image {
+  height: 16rem;
+  width: 16rem;
+}
+
+.pokemon-details-card__body {
+  background-color: var(--dark-blue);
+  opacity: 0.8;
+  border-radius: 50px;
+  min-width: 70%;
+}
+
+.pokemon-number-content {
+  padding: 1rem;
+  background-color: var(--dark);
+  border-radius: 100px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.pokemon-details-card__pokemon-title,
+.pokemon-details-card__pokemon-number,
+.pokemon-details-card__pokemon-type,
+.pokemon-details-card__body-skill,
+.pokemon-details-card__body-form {
+  cursor: default;
+}
+
+.pokemon-details-card__pokemon-title::first-letter,
+.pokemon-details-card__pokemon-type,
+.pokemon-details-card__body-skill,
+.pokemon-details-card__body-form {
+  text-transform: capitalize;
+}
+
+.pokemon-details-card__body-skill,
+.pokemon-details-card__pokemon-type,
+.pokemon-details-card__body-form {
+  background-color: var(--white);
+  display: inline-block;
+  border-radius: 50px;
+  color: black;
+  font-weight: bold;
+}
+
+.pokemon-details-card__pokemon-type {
+  color: var(--white);
+}
+
+/* POKEMON-DETAILS-CARD__POKEMON-TYPE BACKGROUNDS */
+
+.normal {
+  background-color: var(--normal);
+}
+
+.fire {
+  background-color: var(--fire);
+}
+
+.water {
+  background-color: var(--water);
+}
+.electric {
+  background-color: var(--electric);
+}
+.grass {
+  background-color: var(--grass);
+}
+.ice {
+  background-color: var(--ice);
+}
+.fighting {
+  background-color: var(--fighting);
+}
+.poison {
+  background-color: var(--poison);
+}
+.ground {
+  background-color: var(--ground);
+}
+.flying {
+  background-color: var(--flying);
+}
+.psychic {
+  background-color: var(--psychic);
+}
+.bug {
+  background-color: var(--bug);
+}
+.rock {
+  background-color: var(--rock);
+}
+.ghost {
+  background-color: var(--ghost);
+}
+.dragon {
+  background-color: var(--dragon);
+}
+
+.dark {
+  background-color: var(--dark2);
+}
+
+.steel {
+  background-color: var(--steel);
+}
+
+.fairy {
+  background-color: var(--fairy);
+}
+
+/* POKEMON-DETAILS-CARD BACKGROUNDS */
+
+.normal-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--normal-bg), 0.55) 0%,
+    rgba(var(--normal-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+
+.fire-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--fire-bg), 0.55) 0%,
+    rgba(var(--fire-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+
+.water-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--water-bg), 0.55) 0%,
+    rgba(var(--water-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.electric-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--electric-bg), 0.55) 0%,
+    rgba(var(--electric-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.grass-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--grass-bg), 0.55) 0%,
+    rgba(var(--grass-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.ice-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--ice-bg), 0.55) 0%,
+    rgba(var(--ice-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.fighting-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--fighting-bg), 0.55) 0%,
+    rgba(var(--fighting-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.poison-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--poison-bg), 0.55) 0%,
+    rgba(var(--poison-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.ground-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--ground-bg), 0.55) 0%,
+    rgba(var(--ground-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.flying-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--flying-bg), 0.55) 0%,
+    rgba(var(--flying-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.psychic-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--psychic-bg), 0.55) 0%,
+    rgba(var(--psychic-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.bug-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--bug-bg), 0.55) 0%,
+    rgba(var(--bug-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.rock-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--rock-bg), 0.55) 0%,
+    rgba(var(--rock-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.ghost-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--ghost-bg), 0.55) 0%,
+    rgba(var(--ghost-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.dragon-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--dragon-bg), 0.55) 0%,
+    rgba(var(--dragon-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+.dark-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--dark2-bg), 0.55) 0%,
+    rgba(var(--dark2-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+
+.steel-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--steel-bg), 0.55) 0%,
+    rgba(var(--steel-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+
+.fairy-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--fairy-bg), 0.55) 0%,
+    rgba(var(--fairy-bg), 0.55) 60%,
+    var(--white) 75%,
+    var(--white) 100%
+  );
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .pokemon-details-card__image {
+    height: 14rem;
+    width: 14rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .pokemon-details-card__pokemon-number {
+    margin-left: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .pokemon-details-card__body {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .pokemon-details-card__pokemon-title {
+    font-size: 32px;
+  }
+
+  .pokemon-details-card__pokemon-number {
+    margin-left: 0 !important;
+  }
+
+  .pokemon-number-content {
+    font-size: 20px;
+    padding: 0.75rem;
+  }
+
+  .pokemon-details-card__image {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .pokemon-details-card__pokemon-type {
+    font-size: 14px;
+  }
+}
