@@ -1,3 +1,14 @@
+<!-- <app-pokedex
+  *ngIf="!errorMessage; else error"
+  [pokemons]="pokemons"
+  [wrapperMessage]="'Pokédex'"
+  [isSearch]="false"
+  [isDetails]="false"
+  [isLoading]="isLoading"
+></app-pokedex> -->
+
+<div>TEST</div>
+
 <app-pokedex
   *ngIf="!errorMessage; else error"
   [pokemons]="pokemons"
@@ -6,4 +17,8 @@
   [isDetails]="false"
   [isLoading]="isLoading"
 ></app-pokedex>
-<app-error-component #error [errorMessage]="errorMessage"></app-error-component>
+
+<div #error>ERRO</div>
+<!-- <app-pokedex></app-pokedex> -->
+<!-- <app-error-component #error [errorMessage]="errorMessage"></app-error-component> -->
+<!-- <app-error-component #error></app-error-component> -->

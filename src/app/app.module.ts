@@ -10,12 +10,13 @@ import { NavigationItemsComponent } from './components/UI/toolbar/mainNavigation
 import { PokeBallComponent } from './components/UI/pokeBall/pokeBall.component';
 import { SpinnerComponent } from './components/UI/spinner/spinner.component';
 import { ErrorComponent } from './components/errorComponent/errorComponent.component';
-import { PokedexWrapperComponent } from './components/UI/pokedexWrapper/pokedexWrapper.component';
-import { PokedexComponent } from './components/pokedex/pokedex.component';
-import { CardComponent } from './components/pokedex/card/card.component';
+import { PokedexWrapperComponent } from './pages/PokedexPage/pokedexWrapper/pokedexWrapper.component';
+
 import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pokemonDetailsCard.component';
-import { PokeSearchComponent } from './components/pokeSearch/pokeSearch.component';
+import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.component';
 import { CommonModule } from '@angular/common';
+// import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
+import { PokedexPageModule } from './pages/PokedexPage/pokedex.module';
 // import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
 // import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
@@ -25,20 +26,26 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     ErrorComponent,
     ToolbarComponent,
-    MainNavigationComponent,
-    NavigationItemsComponent,
-    NavigationItemComponent,
-    PokeBallComponent,
-    SpinnerComponent,
-    PokedexWrapperComponent,
-    PokedexComponent,
-    PokeSearchComponent,
-    CardComponent,
-    PokemonDetailsCardComponent,
+    // MainNavigationComponent,
+    // NavigationItemsComponent,
+    // PokeBallComponent,
+    // SpinnerComponent,
+    // PokedexWrapperComponent,
+    // PokedexComponent,
+    // PokedexPageComponent
+    // PokeSearchComponent,
+    // CardComponent,
+    // PokemonDetailsCardComponent,
 
     // PokemonSearchPageComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, HttpClientModule, CommonModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
+    CommonModule,
+    PokedexPageModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
