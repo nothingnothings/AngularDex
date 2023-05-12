@@ -15,7 +15,7 @@
             </h1>
             <div class="pokemon-details-card__pokemon-types text-dark">
               <div
-                *ngFor="let typeObject; in: pokemon?.types"
+                *ngFor="let typeObject of pokemon?.types"
                 class="pokemon-details-card__pokemon-type ml-2 mr-1 px-3 py-1"
                 [ngClass]="typeObject.type.name"
               >
