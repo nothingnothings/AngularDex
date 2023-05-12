@@ -1,23 +1,24 @@
+<!-- <div>CARD</div> -->
 
-<div>CARD</div>
-
-
-<!-- <a [routerLink]="pokemonLink" class="pokemon-link"> -->
-  <!-- <div
+<a [routerLink]="pokemonLink" class="pokemon-link">
+  <div
     class="card px-2 mb-5 d-flex flex-row align-items-center justify-content-center position-relative"
     [ngClass]="{
       'starter-background':
-        pokemon.id === '1' || pokemon.id === '2' || pokemon.id === '3'
+        pokemon.id === 4 || pokemon.id === 5 || pokemon.id === 6
     }"
   >
     <h3 class="pokemon-number text-right position-absolute">
       # {{ pokemon.id }}
     </h3>
     <div class="pokemon-img-wrapper">
-      <img [src]='pokemon.id !== "778" || pokemon.id !== "774" ?
-      ("https://img.pokemondb.net/artwork/large/" + pokemon.name + '.jpg') :
-      "https://img.pokemondb.net/artwork/large/pikachu.jpg"' class="pokemon-img"
-      [alt]="pokemon + '-' + pokemon.id">
+      <img
+        [src]="
+          'https://img.pokemondb.net/artwork/large/' + pokemon.name + '.jpg'
+        "
+        class="pokemon-img"
+        [alt]="pokemon + '-' + pokemon.id"
+      />
     </div>
     <div class="pokemon-desc-wrapper">
       <div class="ml-sm-4 pl-4">
@@ -26,5 +27,5 @@
         </h2>
       </div>
     </div>
-  </div> -->
-<!-- </a> -->
+  </div>
+</a>

@@ -19,9 +19,12 @@ export class PokedexComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadPokemon();
+  }
 
   async loadPokemon() {
+    console.log('FETCHED POKEMON');
     this.isLoading = true;
     try {
       const response = await axios.get(

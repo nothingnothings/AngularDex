@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PokedexPageModule } from './pages/PokedexPage/pokedex.module';
+import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
 // import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'pokedex',
-    component: PokedexPageModule,
+    component: PokedexComponent,
   },
 
   // {
