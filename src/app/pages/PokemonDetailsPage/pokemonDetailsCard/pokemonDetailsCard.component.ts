@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon, Type } from 'src/app/types/pokemon.model';
+import { Type } from 'src/app/types/pokemon.model';
 import axios, { AxiosError } from 'axios';
 
 @Component({
@@ -9,9 +9,7 @@ import axios, { AxiosError } from 'axios';
   styleUrls: ['./pokemonDetailsCard.component.scss'],
 })
 export class PokemonDetailsCardComponent implements OnInit {
-  // @Input() pokemon!: Pokemon;
-
-  isLoading = false;
+  isLoading = true;
   detailsIsError = false;
   detailsIsErrorMessage = '';
   pokemon: {
@@ -46,7 +44,6 @@ export class PokemonDetailsCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      console.log(params);
       const pokemonId = params.get('pokemonId');
 
       this.loadPokemon(pokemonId as string);
@@ -84,9 +81,7 @@ export class PokemonDetailsCardComponent implements OnInit {
       );
       this.isLoading = false;
       this.pokemon = response.data;
-      console.log(this.pokemon);
     } catch (error: unknown | Error) {
-      console.log(error);
       this.detailsIsError = true;
       if (error instanceof AxiosError) {
         this.detailsIsErrorMessage = error.message;
