@@ -1,8 +1,8 @@
 import { NgModule, OnInit } from '@angular/core';
-import { PokedexComponent } from './pokedex/pokedex.component';
-import { CardComponent } from './pokedex/card/card.component';
-import { PokedexWrapperComponent } from './pokedexWrapper/pokedexWrapper.component';
-import { PokeSearchComponent } from './pokeSearch/pokeSearch.component';
+import { PokedexComponent } from '../pages/PokedexPage/pokedex/pokedex.component';
+import { CardComponent } from '../pages/PokedexPage/pokedex/card/card.component';
+import { PokedexWrapperComponent } from '../pages/PokedexPage/pokedexWrapper/pokedexWrapper.component';
+import { PokeSearchComponent } from '../pages/PokedexPage/pokeSearch/pokeSearch.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 

@@ -4,15 +4,20 @@ import { Pokemon } from 'src/app/types/pokemon.model';
 import axios, { AxiosError } from 'axios';
 
 @Component({
-  templateUrl: './pokemonDetails.component.html',
-  selector: 'app-pokemon-details-page',
+  templateUrl: './pokemonDetailsCard.component.html',
+  selector: 'app-pokemon-details-card',
+  styleUrls: ['./pokemonDetailsCard.component.scss'],
 })
-export class PokemonDetailsPageComponent implements OnInit {
+export class PokemonDetailsCardComponent implements OnInit {
+  // @Input() pokemon!: Pokemon;
+
+  isLoading = false;
+  detailsIsError = false;
+  detailsIsErrorMessage = '';
+
   constructor(
     public pokemon: null | Pokemon,
-    public isLoading: boolean = false,
-    public detailsIsError: boolean = false,
-    public detailsIsErrorMessage: string = '',
+
     private route: ActivatedRoute
   ) {}
 
@@ -22,6 +27,18 @@ export class PokemonDetailsPageComponent implements OnInit {
 
       this.loadPokemon(pokemonId as string);
     });
+  }
+
+  pokemonType() {
+    return this.pokemon?.types[0].type.name;
+  }
+
+  zeroPad(num: number, places: number) {
+    return String(num).padStart(places, '0');
+  }
+
+  get pokemonImage() {
+    return `https://img.pokemondb.net/artwork/large/${this.pokemon?.name}.jpg`;
   }
 
   async loadPokemon(pokemonId: string) {

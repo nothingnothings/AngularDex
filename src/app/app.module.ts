@@ -12,11 +12,11 @@ import { SpinnerComponent } from './components/UI/spinner/spinner.component';
 import { ErrorComponent } from './components/errorComponent/errorComponent.component';
 import { PokedexWrapperComponent } from './pages/PokedexPage/pokedexWrapper/pokedexWrapper.component';
 
-import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pokemonDetailsCard.component';
+import { PokemonDetailsCardComponent } from './pages/PokemonDetailsPage/pokemonDetailsCard/pokemonDetailsCard.component';
 import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.component';
 import { CommonModule } from '@angular/common';
 // import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
-import { PokedexPageModule } from './pages/PokedexPage/pokedex.module';
+import { PokedexPageModule } from './modules/pokedex.module';
 // import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
 // import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
@@ -45,6 +45,7 @@ import { PokedexPageModule } from './pages/PokedexPage/pokedex.module';
     HttpClientModule,
     CommonModule,
     PokedexPageModule,
+    // PokemonDetailsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
