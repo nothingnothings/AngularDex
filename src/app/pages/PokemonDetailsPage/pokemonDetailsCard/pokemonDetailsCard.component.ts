@@ -14,15 +14,17 @@ export class PokemonDetailsCardComponent implements OnInit {
   isLoading = false;
   detailsIsError = false;
   detailsIsErrorMessage = '';
+  pokemon: Pokemon | null = null;
 
   constructor(
-    public pokemon: null | Pokemon,
+    // public pokemon: null | Pokemon,
 
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
+      console.log(params);
       const pokemonId = params.get('pokemonId');
 
       this.loadPokemon(pokemonId as string);
@@ -42,12 +44,14 @@ export class PokemonDetailsCardComponent implements OnInit {
   }
 
   async loadPokemon(pokemonId: string) {
+    console.log('RODOU DOS GURi');
     try {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
       );
       this.isLoading = false;
       this.pokemon = response.data;
+      console.log(this.pokemon);
     } catch (error: unknown | Error) {
       console.log(error);
       this.detailsIsError = true;
