@@ -44,7 +44,6 @@ export class PokemonDetailsCardComponent implements OnInit {
   }
 
   async loadPokemon(pokemonId: string) {
-    console.log('RODOU DOS GURi');
     try {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${pokemonId}`

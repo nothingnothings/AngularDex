@@ -23,7 +23,6 @@ export class PokedexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this, 'THIS POKEDEX DOS GURI');
     this.loadPokemon();
   }
 

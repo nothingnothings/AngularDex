@@ -14,7 +14,5 @@ export class NavigationItemsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this, 'NAVIGATIONITEM COMPONENT DOS GURI');
-  }
+  ngOnInit(): void {}
 }

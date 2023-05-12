@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class MainNavigationComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('MAIN NAVIGATION DOS GURI', this);
-  }
+  ngOnInit(): void {}
 }
