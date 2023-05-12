@@ -10,6 +10,7 @@ export class PokedexComponent implements OnInit {
   pokemons: SimplePokemon[] = [];
   isError!: boolean;
   errorMessage!: string;
+  message!: 'Pokédex';
 
   @Input() isLoading!: boolean;
   @Input() wrapperMessage!: string;
@@ -17,14 +18,16 @@ export class PokedexComponent implements OnInit {
   @Input() isSearch!: boolean;
   @Input() inputChanged!: VoidFunction;
 
-  constructor() {}
+  constructor() {
+    this.message = 'Pokédex';
+  }
 
   ngOnInit(): void {
+    console.log(this, 'THIS POKEDEX DOS GURI');
     this.loadPokemon();
   }
 
   async loadPokemon() {
-    console.log('FETCHED POKEMON');
     this.isLoading = true;
     try {
       const response = await axios.get(

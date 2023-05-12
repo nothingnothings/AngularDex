@@ -21,7 +21,7 @@
 
 <app-pokedex-wrapper
   *ngIf="!isLoading && pokemons.length > 0; else loading"
-  [message]="wrapperMessage"
+  [message]="message"
   [isDetails]="isDetails"
 >
   <div class="container pokedex mt-3 pt-2">
@@ -39,7 +39,6 @@
     </div>
   </div>
 </app-pokedex-wrapper>
-
 
 <ng-template #loading></ng-template>
 

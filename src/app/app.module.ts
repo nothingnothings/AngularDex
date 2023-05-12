@@ -26,6 +26,7 @@ import { PokedexPageModule } from './pages/PokedexPage/pokedex.module';
     AppComponent,
     ErrorComponent,
     ToolbarComponent,
+    MainNavigationComponent,
     // MainNavigationComponent,
     // NavigationItemsComponent,
     // PokeBallComponent,
