@@ -15,7 +15,8 @@ import { PokedexWrapperComponent } from './components/UI/pokedexWrapper/pokedexW
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { CardComponent } from './components/pokedex/card/card.component';
 import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pokemonDetailsCard.component';
-// import { PokeSearchComponent } from './components/pokeSearch/pokeSearch.component';
+import { PokeSearchComponent } from './components/pokeSearch/pokeSearch.component';
+import { CommonModule } from '@angular/common';
 // import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
 // import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
@@ -23,6 +24,7 @@ import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pok
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorComponent,
     ToolbarComponent,
     MainNavigationComponent,
     NavigationItemsComponent,
@@ -30,14 +32,14 @@ import { PokemonDetailsCardComponent } from './components/pokemonDetailsCard/pok
     PokeBallComponent,
     SpinnerComponent,
     PokedexWrapperComponent,
-    ErrorComponent,
     PokedexComponent,
+    PokeSearchComponent,
     CardComponent,
     PokemonDetailsCardComponent,
-    // PokeSearchComponent,
+
     // PokemonSearchPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [AppRoutingModule, BrowserModule, HttpClientModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
 })

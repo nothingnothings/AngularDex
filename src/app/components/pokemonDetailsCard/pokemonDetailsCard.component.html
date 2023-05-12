@@ -11,12 +11,11 @@
             class="pokemon-text outer-wrapper align-self-start d-flex flex-column mr-md-5 pr-md-5"
           >
             <h1 class="pokemon-details-card__pokemon-title">
-              {{ pokemon?.name }}
+              {{ pokemon.name }}
             </h1>
             <div class="pokemon-details-card__pokemon-types text-dark">
               <div
-                v-for="typeObject in pokemon?.types"
-                [key]="typeObject.type.name"
+                *ngFor="let typeObject in pokemon?.types"
                 class="pokemon-details-card__pokemon-type ml-2 mr-1 px-3 py-1"
                 [ngClass]="typeObject.type.name"
               >
@@ -27,9 +26,9 @@
           <div
             class="pokemon-details-card__pokemon-number d-flex flex-column justify-content-center ml-5 pl-5"
           >
-          <!-- METHOD CALL -->
+            <!-- METHOD CALL -->
             <h3 class="pokemon-number-content">
-              #{{ zeroPad(pokemon!.id, 3) }}
+              #{{ zeroPad(pokemon.id, 3) }}
             </h3>
           </div>
         </div>
@@ -50,7 +49,6 @@
             <div
               *ngFor="let abilityObject of pokemon?.abilities"
               class="pokemon-details-card__body-skill my-1 my-sm-0 ml-2 mr-1 px-2 py-1"
-              [key]="abilityObject.ability.name"
             >
               {{ abilityObject.ability.name }}
             </div>
@@ -79,9 +77,8 @@
             <strong class="mb-2 mb-sm-0 text-nowrap">Formas: &nbsp;</strong>
 
             <div
-            *ngFor="let formObject in pokemon!.forms"
+              *ngFor="let formObject; in: pokemon!.forms"
               class="pokemon-details-card__body-form text-nowrap ml-2 mr-1 px-2 py-1 my-1"
-              [key]="formObject.name"
             >
               {{ formObject.name }}
             </div>
