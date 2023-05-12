@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
-// import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
+import { PokemonDetailsCardComponent } from './pages/PokemonDetailsPage/pokemonDetailsCard/pokemonDetailsCard.component';
+
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 const routes: Routes = [
   {
@@ -17,10 +18,10 @@ const routes: Routes = [
     component: PokedexComponent,
   },
 
-  // {
-  //   path: 'pokedex/:pokemonId',
-  //   component: PokemonDetailsPageComponent,
-  // },
+  {
+    path: 'pokedex/:pokemonId',
+    component: PokemonDetailsCardComponent,
+  },
   // {
   //   path: 'search',
   //   component: PokemonSearchPageComponent,
