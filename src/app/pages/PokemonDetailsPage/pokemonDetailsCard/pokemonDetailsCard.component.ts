@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon } from 'src/app/types/pokemon.model';
+import { Pokemon, Type } from 'src/app/types/pokemon.model';
 import axios, { AxiosError } from 'axios';
 
 @Component({
@@ -14,13 +14,35 @@ export class PokemonDetailsCardComponent implements OnInit {
   isLoading = false;
   detailsIsError = false;
   detailsIsErrorMessage = '';
-  pokemon: Pokemon | null = null;
+  pokemon: {
+    id: number;
+    name: string;
+    abilities: any[];
+    base_experience: number;
+    height: number;
+    weight: number;
+    forms: any[];
+    types: Type[];
+  } = {
+    id: 0,
+    name: '',
+    abilities: [],
+    base_experience: 0,
+    height: 0,
+    weight: 0,
+    forms: [],
+    types: [
+      {
+        slot: 0,
+        type: {
+          url: '',
+          name: '',
+        },
+      },
+    ],
+  };
 
-  constructor(
-    // public pokemon: null | Pokemon,
-
-    private route: ActivatedRoute
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -40,7 +62,19 @@ export class PokemonDetailsCardComponent implements OnInit {
   }
 
   get pokemonImage() {
-    return `https://img.pokemondb.net/artwork/large/${this.pokemon?.name}.jpg`;
+    if (this.pokemon.name !== '') {
+      return `https://img.pokemondb.net/artwork/large/${this.pokemon.name}.jpg`;
+    } else {
+      return null;
+    }
+  }
+
+  get height() {
+    return this.pokemon!.height * 10;
+  }
+
+  get weight() {
+    return this.pokemon!.weight / 10;
   }
 
   async loadPokemon(pokemonId: string) {

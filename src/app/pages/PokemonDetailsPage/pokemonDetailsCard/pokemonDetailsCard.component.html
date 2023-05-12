@@ -11,7 +11,7 @@
             class="pokemon-text outer-wrapper align-self-start d-flex flex-column mr-md-5 pr-md-5"
           >
             <h1 class="pokemon-details-card__pokemon-title">
-              {{ pokemon?.name }}
+              {{ pokemon.name }}
             </h1>
             <div class="pokemon-details-card__pokemon-types text-dark">
               <div
@@ -28,7 +28,7 @@
           >
             <!-- METHOD CALL -->
             <h3 class="pokemon-number-content">
-              #{{ zeroPad(pokemon?.id!, 3) }}
+              #{{ zeroPad(pokemon.id, 3) }}
             </h3>
           </div>
         </div>
@@ -37,7 +37,7 @@
         >
           <img
             [src]="pokemonImage"
-            [alt]="pokemon?.name"
+            [alt]="pokemon.name"
             class="pokemon-details-card__image"
           />
         </div>
@@ -57,13 +57,13 @@
             class="pokemon-details-card__body__height d-flex align-items-center my-3"
           >
             <strong class="py-1">Altura: &nbsp;</strong>
-            <p class="mb-0">&nbsp; {{ pokemon!.height * 10 }} cm</p>
+            <p class="mb-0">&nbsp; {{ height }} cm</p>
           </div>
           <div
             class="pokemon-details-card__body__weight d-flex align-items-center my-3"
           >
             <strong class="py-1">Peso: &nbsp;</strong>
-            <p class="mb-0">&nbsp; {{ pokemon!.weight / 10 }} kg</p>
+            <p class="mb-0">&nbsp; {{ weight }} kg</p>
           </div>
           <div
             class="pokemon-details-card__body__experience d-flex align-items-center my-3"
@@ -77,7 +77,7 @@
             <strong class="mb-2 mb-sm-0 text-nowrap">Formas: &nbsp;</strong>
 
             <div
-              *ngFor="let formObject of pokemon!.forms"
+              *ngFor="let formObject of pokemon.forms"
               class="pokemon-details-card__body-form text-nowrap ml-2 mr-1 px-2 py-1 my-1"
             >
               {{ formObject.name }}
