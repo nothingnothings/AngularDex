@@ -23,7 +23,7 @@
   <router-outlet></router-outlet>
 </app-pokedex-wrapper> -->
 <app-pokedex-wrapper
-  *ngIf="!isLoading && pokemons.length > 0; else loading"
+  *ngIf="!isLoading"
   [message]="message"
   [isDetails]="isDetails"
 >
@@ -35,6 +35,12 @@
       class="col-12 col-sm-11 col-md-8 col-lg-6"
     >
       <app-card [pokemon]="pokemon"></app-card>
+    </div>
+    <div
+      *ngIf="!isLoading && pokemons.length === 0"
+      className="col-12 col-sm-11 col-md-8 col-lg-6 mt-4 text-center font-weight-bold"
+    >
+      Nenhum Pokémon encontrado.
     </div>
   </div>
 </app-pokedex-wrapper>

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
 
 import { HttpClient } from '@angular/common/http';
 import { map, Subject, tap } from 'rxjs';
@@ -38,27 +37,16 @@ export class PokedexService {
         }),
 
         tap((pokemons) => {
-          console.log('TEST', pokemons);
           this.allPokemons = pokemons;
           this.pokemons = pokemons;
           this.pokedexChanged.next([...pokemons]);
         })
       );
-
-    // this.pokemons = alteredPokemons;
-    // this.pokemons = alteredPokemons;
-    // this.isLoading = false;
-
-    // this.isError = true;
-    // if (error instanceof AxiosError) {
-    //   this.errorMessage = error.message;
-    // }
   }
 
   pokedexChanged = new Subject<SimplePokemon[]>();
 
   filterPokemon(filter: string) {
-    console.log(filter);
     const filteredPokemons = this.pokemons.filter((pokemon: SimplePokemon) => {
       return pokemon.name.toUpperCase().includes(filter.toUpperCase());
     });

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
-// import axios, { AxiosError } from 'axios';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 import { PokedexService } from 'src/services/pokedex.service';
 
@@ -38,6 +37,7 @@ export class PokedexComponent implements OnInit {
 
     if (activeUrl === '/pokedex/search') {
       this.message = 'Procurar por um Pokémon';
+      this.isDetails = false;
     }
 
     this.router.events.subscribe((event: Event) => {
@@ -52,35 +52,12 @@ export class PokedexComponent implements OnInit {
     });
 
     this.pokedex.pokedexChanged.subscribe((pokemons) => {
-      console.log('ENTROU DOS GURI', pokemons.length);
       this.pokemons = pokemons;
+      if (this.pokemons.length < 5) {
+        this.isDetails = true;
+      } else {
+        this.isDetails = false;
+      }
     });
   }
-
-  // async loadPokemon() {
-  //   this.isLoading = true;
-  //   try {
-  //     const response = await axios.get(
-  //       'https://pokeapi.co/api/v2/pokemon?limit=800'
-  //     );
-
-  //     const alteredPokemons = response.data.results.map(
-  //       (pokemon: SimplePokemon, index: number) => {
-  //         return {
-  //           id: index + 1,
-  //           url: pokemon.url,
-  //           name: pokemon.name,
-  //         };
-  //       }
-  //     );
-
-  //     this.pokemons = alteredPokemons;
-  //     this.isLoading = false;
-  //   } catch (error: unknown | Error) {
-  //     this.isError = true;
-  //     if (error instanceof AxiosError) {
-  //       this.errorMessage = error.message;
-  //     }
-  //   }
-  // }
 }
