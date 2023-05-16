@@ -4,11 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
 import { PokemonDetails } from './pages/PokemonDetailsPage/pokemonDetails.component';
 
-// import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
+import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.component';
 const routes: Routes = [
   {
-    ////ordem das routes importa, exatamente como no REACT ROUTER
-
     path: '',
     redirectTo: '/pokedex',
     pathMatch: 'full',
@@ -16,6 +14,12 @@ const routes: Routes = [
   {
     path: 'pokedex',
     component: PokedexComponent,
+    children: [
+      {
+        path: 'search',
+        component: PokeSearchComponent,
+      },
+    ],
   },
 
   {

@@ -19,16 +19,20 @@
   </div>
 </app-pokedex-wrapper> -->
 
+<!-- <app-pokedex-wrapper>
+  <router-outlet></router-outlet>
+</app-pokedex-wrapper> -->
 <app-pokedex-wrapper
   *ngIf="!isLoading && pokemons.length > 0; else loading"
   [message]="message"
   [isDetails]="isDetails"
 >
   <div class="container pokedex mt-3 pt-2">
-    <app-poke-search
+    <!-- <app-poke-search
       *ngIf="isSearch"
       [inputChanged]="inputChanged"
-    ></app-poke-search>
+    ></app-poke-search> -->
+    <router-outlet></router-outlet>
   </div>
   <div class="row d-flex justify-content-center mt-5">
     <div

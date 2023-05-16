@@ -1,4 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  ActivatedRoute,
+  Event,
+  NavigationEnd,
+  NavigationStart,
+  Router,
+  RoutesRecognized,
+} from '@angular/router';
 import axios, { AxiosError } from 'axios';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 
@@ -10,7 +18,8 @@ export class PokedexComponent implements OnInit {
   pokemons: SimplePokemon[] = [];
   isError!: boolean;
   errorMessage!: string;
-  message!: 'Pokédex';
+  message!: string;
+  showWrapper!: boolean;
 
   @Input() isLoading!: boolean;
   @Input() wrapperMessage!: string;
@@ -18,13 +27,35 @@ export class PokedexComponent implements OnInit {
   @Input() isSearch!: boolean;
   @Input() inputChanged!: VoidFunction;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.message = 'Pokédex';
+    this.showWrapper = true;
   }
 
   ngOnInit(): void {
     this.loadPokemon();
+
+    const activeUrl = this.router.url;
+
+    console.log(activeUrl, 'URL DOS GURI');
+    if (activeUrl === '/pokedex/search') {
+      this.message = 'Procurar por um Pokémon';
+    }
+
+    this.router.events.subscribe((event: Event) => {
+      console.log('EXEMPLO', event);
+      if (event instanceof NavigationEnd) {
+        console.log('EXEMPLO2', event);
+        if (event.url === '/pokedex') {
+          this.message = 'Pokedéx';
+        } else {
+          this.message = 'Procurar por um Pokémon';
+        }
+      }
+    });
   }
+
+  updated() {}
 
   async loadPokemon() {
     this.isLoading = true;
