@@ -1,45 +1,72 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
+import { HttpClient } from '@angular/common/http';
 import { map, Subject, tap } from 'rxjs';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 
 @Injectable()
 export class PokedexService {
   private pokemons: SimplePokemon[] = [];
+  private allPokemons: SimplePokemon[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getPokemons() {
     return [...this.pokemons];
   }
 
-  async loadPokemons() {
+  loadPokemons() {
     // this.isLoading = true;
-    try {
-      const response = await axios.get(
-        'https://pokeapi.co/api/v2/pokemon?limit=800'
+
+    return this.http
+      .get<[SimplePokemon]>('https://pokeapi.co/api/v2/pokemon?limit=800')
+      .pipe(
+        map((data: any) => {
+          const transformedPokemonArray: SimplePokemon[] = [];
+          let index = 0;
+
+          for (const pokemon in data.results) {
+            transformedPokemonArray.push({
+              ...data.results[pokemon],
+              id: index + 1,
+            });
+            index++;
+          }
+
+          return transformedPokemonArray;
+        }),
+
+        tap((pokemons) => {
+          console.log('TEST', pokemons);
+          this.allPokemons = pokemons;
+          this.pokemons = pokemons;
+          this.pokedexChanged.next([...pokemons]);
+        })
       );
 
-      const alteredPokemons = response.data.results.map(
-        (pokemon: SimplePokemon, index: number) => {
-          return {
-            id: index + 1,
-            url: pokemon.url,
-            name: pokemon.name,
-          };
-        }
-      );
+    // this.pokemons = alteredPokemons;
+    // this.pokemons = alteredPokemons;
+    // this.isLoading = false;
 
-      // this.pokemons = alteredPokemons;
-      this.pokemons = alteredPokemons;
-      return alteredPokemons;
-      // this.isLoading = false;
-    } catch (error: unknown | Error) {
-      // this.isError = true;
-      // if (error instanceof AxiosError) {
-      //   this.errorMessage = error.message;
-      // }
-    }
+    // this.isError = true;
+    // if (error instanceof AxiosError) {
+    //   this.errorMessage = error.message;
+    // }
+  }
+
+  pokedexChanged = new Subject<SimplePokemon[]>();
+
+  filterPokemon(filter: string) {
+    console.log(filter);
+    const filteredPokemons = this.pokemons.filter((pokemon: SimplePokemon) => {
+      return pokemon.name.toUpperCase().includes(filter.toUpperCase());
+    });
+
+    this.pokedexChanged.next([...filteredPokemons]);
+  }
+
+  resetPokemon() {
+    this.pokedexChanged.next([...this.allPokemons]);
   }
 }

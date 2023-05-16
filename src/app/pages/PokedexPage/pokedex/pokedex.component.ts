@@ -44,10 +44,16 @@ export class PokedexComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         if (event.url === '/pokedex') {
           this.message = 'Pokedéx';
+          this.pokedex.resetPokemon();
         } else {
           this.message = 'Procurar por um Pokémon';
         }
       }
+    });
+
+    this.pokedex.pokedexChanged.subscribe((pokemons) => {
+      console.log('ENTROU DOS GURI', pokemons.length);
+      this.pokemons = pokemons;
     });
   }
 
@@ -77,11 +83,4 @@ export class PokedexComponent implements OnInit {
   //     }
   //   }
   // }
-
-  onActivate(value: any) {
-    console.log('ENTROU DOS GURI');
-    this.pokemons = this.pokemons.filter((pokemon: SimplePokemon) => {
-      return pokemon.name.toUpperCase().includes(value.toUpperCase());
-    });
-  }
 }

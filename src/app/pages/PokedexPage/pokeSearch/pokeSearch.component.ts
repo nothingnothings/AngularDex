@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { PokedexService } from 'src/services/pokedex.service';
 
 @Component({
   templateUrl: './pokeSearch.component.html',
@@ -11,19 +12,22 @@ export class PokeSearchComponent implements OnInit {
   change = new EventEmitter();
   searchedPokemon = '';
 
-  constructor() {}
+  constructor(private pokedex: PokedexService) {}
 
   ngOnInit(): void {}
 
-  inputChanged(elementRef: any) {
-    console.log('INPUT RECEIVED', elementRef);
+  inputChanged(event: any) {
+    console.log('INPUT RECEIVED', event.target.value);
 
     // elementRef.subscribe((event: any) => {
     //   console.log(event);
     // });
-    console.log(elementRef.target.value);
 
-    this.searchedPokemon = elementRef.target.value;
-    this.change.emit(this.searchedPokemon);
+    const filter = event?.target.value;
+
+    // this.searchedPokemon = elementRef.target.value;
+    // this.change.emit(this.searchedPokemon);
+
+    this.pokedex.filterPokemon(filter);
   }
 }
