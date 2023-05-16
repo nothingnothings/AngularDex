@@ -27,13 +27,8 @@
   [message]="message"
   [isDetails]="isDetails"
 >
-  <div class="container pokedex mt-3 pt-2">
-    <!-- <app-poke-search
-      *ngIf="isSearch"
-      [inputChanged]="inputChanged"
-    ></app-poke-search> -->
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet (change)="onActivate($event)"></router-outlet>
+
   <div class="row d-flex justify-content-center mt-5">
     <div
       *ngFor="let pokemon of pokemons"

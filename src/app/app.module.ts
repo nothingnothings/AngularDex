@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 // import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
 import { PokedexPageModule } from './modules/pokedex.module';
 import { PokemonDetailsModule } from './modules/pokemonDetails.module';
+import { PokedexService } from 'src/services/pokedex.service';
 // import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
 // import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
@@ -49,7 +50,7 @@ import { PokemonDetailsModule } from './modules/pokemonDetails.module';
   ],
   // exports: [PokedexWrapperComponent],
 
-  providers: [],
+  providers: [PokedexService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

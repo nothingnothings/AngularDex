@@ -11,11 +11,7 @@ export class PokedexWrapperComponent implements OnInit {
   @Input() isDetails!: boolean;
   @Input() test!: string;
 
-  constructor() {
-    console.log(this);
-    // this.propMessage = this.message;
-    // this.message = this.wrapperMessage;
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }

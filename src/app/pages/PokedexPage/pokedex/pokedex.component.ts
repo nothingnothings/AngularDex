@@ -1,14 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  ActivatedRoute,
-  Event,
-  NavigationEnd,
-  NavigationStart,
-  Router,
-  RoutesRecognized,
-} from '@angular/router';
-import axios, { AxiosError } from 'axios';
+import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
+// import axios, { AxiosError } from 'axios';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
+import { PokedexService } from 'src/services/pokedex.service';
 
 @Component({
   templateUrl: './pokedex.component.html',
@@ -27,25 +21,27 @@ export class PokedexComponent implements OnInit {
   @Input() isSearch!: boolean;
   @Input() inputChanged!: VoidFunction;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private pokedex: PokedexService
+  ) {
     this.message = 'Pokédex';
     this.showWrapper = true;
   }
 
   ngOnInit(): void {
-    this.loadPokemon();
+    // this.loadPokemon();
+    this.pokemons = this.pokedex.getPokemons();
 
     const activeUrl = this.router.url;
 
-    console.log(activeUrl, 'URL DOS GURI');
     if (activeUrl === '/pokedex/search') {
       this.message = 'Procurar por um Pokémon';
     }
 
     this.router.events.subscribe((event: Event) => {
-      console.log('EXEMPLO', event);
       if (event instanceof NavigationEnd) {
-        console.log('EXEMPLO2', event);
         if (event.url === '/pokedex') {
           this.message = 'Pokedéx';
         } else {
@@ -55,33 +51,37 @@ export class PokedexComponent implements OnInit {
     });
   }
 
-  updated() {}
+  // async loadPokemon() {
+  //   this.isLoading = true;
+  //   try {
+  //     const response = await axios.get(
+  //       'https://pokeapi.co/api/v2/pokemon?limit=800'
+  //     );
 
-  async loadPokemon() {
-    this.isLoading = true;
-    try {
-      const response = await axios.get(
-        'https://pokeapi.co/api/v2/pokemon?limit=800'
-      );
+  //     const alteredPokemons = response.data.results.map(
+  //       (pokemon: SimplePokemon, index: number) => {
+  //         return {
+  //           id: index + 1,
+  //           url: pokemon.url,
+  //           name: pokemon.name,
+  //         };
+  //       }
+  //     );
 
-      const alteredPokemons = response.data.results.map(
-        (pokemon: SimplePokemon, index: number) => {
-          return {
-            id: index + 1,
-            url: pokemon.url,
-            name: pokemon.name,
-          };
-        }
-      );
+  //     this.pokemons = alteredPokemons;
+  //     this.isLoading = false;
+  //   } catch (error: unknown | Error) {
+  //     this.isError = true;
+  //     if (error instanceof AxiosError) {
+  //       this.errorMessage = error.message;
+  //     }
+  //   }
+  // }
 
-      this.pokemons = alteredPokemons;
-      this.isLoading = false;
-    } catch (error: unknown | Error) {
-      console.log(error);
-      this.isError = true;
-      if (error instanceof AxiosError) {
-        this.errorMessage = error.message;
-      }
-    }
+  onActivate(value: any) {
+    console.log('ENTROU DOS GURI');
+    this.pokemons = this.pokemons.filter((pokemon: SimplePokemon) => {
+      return pokemon.name.toUpperCase().includes(value.toUpperCase());
+    });
   }
 }

@@ -5,6 +5,8 @@ import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component'
 import { PokemonDetails } from './pages/PokemonDetailsPage/pokemonDetails.component';
 
 import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.component';
+import { PokedexResolverService } from './resolvers/pokedex-resolver.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -14,9 +16,11 @@ const routes: Routes = [
   {
     path: 'pokedex',
     component: PokedexComponent,
+    resolve: [PokedexResolverService],
     children: [
       {
         path: 'search',
+        resolve: [PokedexResolverService],
         component: PokeSearchComponent,
       },
     ],

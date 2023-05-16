@@ -1,21 +1,14 @@
-<!-- <app-pokedex-wrapper [message]="'Procurar por um Pokémon'"> -->
-  <div class="container pokeSearch-container mt-5 pb-3">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control custom-form-control"
-            placeholder="Procurar por um Pokémon"
-          />
-        </div>
+<div class="container pokeSearch-container mt-5 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control custom-form-control"
+          placeholder="Procurar por um Pokémon"
+          (keyup)="inputChanged($event)"
+        />
       </div>
     </div>
-    <!-- CONTEÚDO -->
-    <!-- (input)="
-  (event: Event) => {
-    inputChanged(event);
-  }
-" -->
   </div>
-<!-- </app-pokedex-wrapper> -->
+</div>
