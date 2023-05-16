@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
 import { SimplePokemon } from 'src/app/types/simplePokemon.model';
-import { PokedexService } from 'src/services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
   templateUrl: './pokedex.component.html',
@@ -13,8 +13,9 @@ export class PokedexComponent implements OnInit {
   errorMessage!: string;
   message!: string;
   showWrapper!: boolean;
+  isLoading!: boolean;
 
-  @Input() isLoading!: boolean;
+  // @Input() isLoading!: boolean;
   @Input() wrapperMessage!: string;
   @Input() isDetails!: boolean;
   @Input() isSearch!: boolean;
@@ -30,7 +31,6 @@ export class PokedexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.loadPokemon();
     this.pokemons = this.pokedex.getPokemons();
 
     const activeUrl = this.router.url;
@@ -59,5 +59,7 @@ export class PokedexComponent implements OnInit {
         this.isDetails = false;
       }
     });
+
+    console.log('STARTED');
   }
 }

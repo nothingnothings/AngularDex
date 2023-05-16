@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { PokedexService } from 'src/services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
   templateUrl: './pokeSearch.component.html',

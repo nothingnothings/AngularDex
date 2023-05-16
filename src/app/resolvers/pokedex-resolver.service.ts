@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PokedexService } from 'src/services/pokedex.service';
+import { PokedexService } from 'src/app/services/pokedex.service';
 import { SimplePokemon } from '../types/simplePokemon.model';
 
 @Injectable({ providedIn: 'root' })

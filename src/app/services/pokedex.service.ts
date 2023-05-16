@@ -8,6 +8,7 @@ import { SimplePokemon } from 'src/app/types/simplePokemon.model';
 export class PokedexService {
   private pokemons: SimplePokemon[] = [];
   private allPokemons: SimplePokemon[] = [];
+  private isLoading = false;
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +17,7 @@ export class PokedexService {
   }
 
   loadPokemons() {
-    // this.isLoading = true;
+    this.isLoading = true;
 
     return this.http
       .get<[SimplePokemon]>('https://pokeapi.co/api/v2/pokemon?limit=800')
@@ -40,11 +41,18 @@ export class PokedexService {
           this.allPokemons = pokemons;
           this.pokemons = pokemons;
           this.pokedexChanged.next([...pokemons]);
+          this.isLoading = false;
         })
       );
   }
 
   pokedexChanged = new Subject<SimplePokemon[]>();
+
+  loading = new Subject<boolean>();
+
+  loadState() {
+    return this.loading.next(this.isLoading);
+  }
 
   filterPokemon(filter: string) {
     const filteredPokemons = this.pokemons.filter((pokemon: SimplePokemon) => {
