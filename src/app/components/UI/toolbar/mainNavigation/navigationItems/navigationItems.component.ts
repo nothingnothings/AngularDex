@@ -8,8 +8,8 @@ import { NavItem } from 'src/app/types/navItem.model';
 })
 export class NavigationItemsComponent implements OnInit {
   navItems: NavItem[] = [
-    { id: 'pokedex', text: 'Pokédex', link: '/' },
-    { id: 'search', text: 'Procurar por um Pokémon', link: '/search' },
+    { id: 'pokedex', text: 'Pokédex', link: '/pokedex', exact: true },
+    { id: 'search', text: 'Procurar por um Pokémon', link: '/search', exact: false },
   ];
 
   constructor() {}

@@ -2,7 +2,6 @@
   <div class="row justify-content-center text-white mt-4">
     <div class="col-md-11 col-lg-9 mt-2">
       <app-spinner *ngIf="isLoading"></app-spinner>
-      <!-- COMPUTED -->
       <div
         *ngIf="!isLoading"
         class="pokemon-details-card mt-4 pt-4 d-flex flex-column align-items-center"
@@ -28,7 +27,6 @@
           <div
             class="pokemon-details-card__pokemon-number d-flex flex-column justify-content-center ml-5 pl-5"
           >
-            <!-- METHOD CALL -->
             <h3 class="pokemon-number-content">
               #{{ zeroPad(pokemon.id, 3) }}
             </h3>

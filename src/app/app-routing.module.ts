@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
-import { PokemonDetailsCardComponent } from './pages/PokemonDetailsPage/pokemonDetailsCard/pokemonDetailsCard.component';
+import { PokemonDetails } from './pages/PokemonDetailsPage/pokemonDetails.component';
 
 // import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
 
   {
     path: 'pokedex/:pokemonId',
-    component: PokemonDetailsCardComponent,
+    component: PokemonDetails,
   },
   // {
   //   path: 'search',

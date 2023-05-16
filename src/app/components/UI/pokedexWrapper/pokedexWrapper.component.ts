@@ -9,6 +9,7 @@ export class PokedexWrapperComponent implements OnInit {
   propMessage!: string;
   @Input() message!: string;
   @Input() isDetails!: boolean;
+  @Input() test!: string;
 
   constructor() {
     console.log(this);

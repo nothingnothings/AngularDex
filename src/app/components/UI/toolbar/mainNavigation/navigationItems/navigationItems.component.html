@@ -9,7 +9,7 @@
     *ngFor="let navItem of navItems; let index = index"
     class="main-header__item nav-item px-4 text-nowrap"
   >
-    <a routerLinkActive="active" [routerLink]="navItem.link">{{
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: navItem.exact}" [routerLink]="navItem.link">{{
       navItem.text
     }}</a>
   </li>
