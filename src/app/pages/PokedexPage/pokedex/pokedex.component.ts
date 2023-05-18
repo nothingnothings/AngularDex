@@ -15,7 +15,6 @@ export class PokedexComponent implements OnInit {
   showWrapper!: boolean;
   isLoading!: boolean;
 
-  // @Input() isLoading!: boolean;
   @Input() wrapperMessage!: string;
   @Input() isDetails!: boolean;
   @Input() isSearch!: boolean;
@@ -60,6 +59,5 @@ export class PokedexComponent implements OnInit {
       }
     });
 
-    console.log('STARTED');
   }
 }

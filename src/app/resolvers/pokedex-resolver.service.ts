@@ -18,7 +18,7 @@ export class PokedexResolverService implements Resolve<SimplePokemon[]> {
     const pokemons = this.pokedexService.getPokemons();
 
     if (pokemons.length === 0) {
-      return this.pokedexService.loadPokemons(); // vai 'resolve' essa data ANTES DE NOSSOS COMPONENTS SEREM CARREGADOS, ANTES DA PAGE DE 'recipe-book' SER CARREGADA...
+      return this.pokedexService.loadPokemons();
     } else {
       return pokemons;
     }

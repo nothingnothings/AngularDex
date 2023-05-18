@@ -10,7 +10,5 @@ export class SpinnerComponent implements OnInit {
 
   constructor(public loader: LoaderService) {}
 
-  ngOnInit(): void {
-    console.log('CREATED SPINNER');
-  }
+  ngOnInit(): void {}
 }

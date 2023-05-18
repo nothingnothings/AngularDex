@@ -30,10 +30,7 @@ const routes: Routes = [
     path: 'pokedex/:pokemonId',
     component: PokemonDetails,
   },
-  // {
-  //   path: 'search',
-  //   component: PokemonSearchPageComponent,
-  // },
+
   {
     path: '**',
     redirectTo: '/pokedex',
