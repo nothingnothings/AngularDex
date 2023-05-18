@@ -56,7 +56,7 @@ O app foi inicializado/bootstrapped com o comando/environment `ng new project-na
  
 ## Estrutura de Diretórios do Projeto
 
-O ambiente de desenvolvimento (com utilização da ferramenta/environment/worfklow `npx vue create app`):
+O ambiente de desenvolvimento (com utilização da ferramenta/environment/worfklow `ng new project-name`):
 
 
 ```
@@ -70,138 +70,160 @@ O ambiente de desenvolvimento (com utilização da ferramenta/environment/worfkl
 │
 │
 ├── .vscode\
-│   └── settings.json
+│   ├── extensions.json
+│   ├── launch.json
+│   └── tasks.json
 │
-├── public\
+├── snapshots\
+│   ├── AngularDex1.png
+│   └── AngularDex2.png
+│
+├── src\
 │   │
-│   ├── fonts\
-│   │   └── Pokemon Solid.ttf
+│   ├── app\
+│   │   │
+│   │   ├── components\
+│   │   │   │
+│   │   │   ├── UI\
+│   │   │   │   │
+│   │   │   │   ├── pokeBall\
+│   │   │   │   │   ├── pokeBall.component.html
+│   │   │   │   │   ├── pokeBall.component.scss
+│   │   │   │   │   └── pokeBall.component.ts
+│   │   │   │   │
+│   │   │   │   ├── pokedexWrapper\
+│   │   │   │   │   ├── pokedexWrapper.component.html
+│   │   │   │   │   ├── pokedexWrapper.component.scss
+│   │   │   │   │   └── pokedexWrapper.component.ts
+│   │   │   │   │
+│   │   │   │   ├── spinner\
+│   │   │   │   │   ├── spinner.component.html
+│   │   │   │   │   └── spinner.component.ts
+│   │   │   │   │
+│   │   │   │   └── toolbar\
+│   │   │   │       │
+│   │   │   │       ├── mainNavigation\
+│   │   │   │       │   │
+│   │   │   │       │   ├── navigationItems\
+│   │   │   │       │   │   ├── navigationItems.component.html
+│   │   │   │       │   │   ├── navigationItems.component.scss
+│   │   │   │       │   │   └── navigationItems.component.ts
+│   │   │   │       │   │
+│   │   │   │       │   ├── mainNavigation.component.html
+│   │   │   │       │   ├── mainNavigation.component.scss
+│   │   │   │       │   └── mainNavigation.component.ts
+│   │   │   │       │
+│   │   │   │       ├── toolbar.component.html
+│   │   │   │       ├── toolbar.component.scss
+│   │   │   │       └── toolbar.component.ts
+│   │   │   │
+│   │   │   │
+│   │   │   └── errorComponent\
+│   │   │       ├── errorComponent.component.html
+│   │   │       ├── errorComponent.component.scss
+│   │   │       └── errorComponent.component.ts
+│   │   │
+│   │   │
+│   │   ├── interceptors\
+│   │   │   └── interceptor.ts
+│   │   │
+│   │   ├── modules\
+│   │   │   ├── pokedex.module.ts
+│   │   │   ├── pokemonDetails.module.ts
+│   │   │   └── shared.module.ts
+│   │   │
+│   │   ├── pages\
+│   │   │   │
+│   │   │   ├── PokedexPage\
+│   │   │   │   │
+│   │   │   │   ├── pokeSearch\
+│   │   │   │   │   ├── pokeSearch.component.html
+│   │   │   │   │   └── pokeSearch.component.ts
+│   │   │   │   │
+│   │   │   │   └── pokedex\
+│   │   │   │       │
+│   │   │   │       ├── card\
+│   │   │   │       │   ├── card.component.html
+│   │   │   │       │   ├── card.component.scss
+│   │   │   │       │   └── card.component.ts
+│   │   │   │       │
+│   │   │   │       ├── pokedex.component.html
+│   │   │   │       └── pokedex.component.ts
+│   │   │   │
+│   │   │   │
+│   │   │   └── PokemonDetailsPage\
+│   │   │       │
+│   │   │       ├── pokemonDetailsCard\
+│   │   │       │   ├── pokemonDetailsCard.component.html
+│   │   │       │   ├── pokemonDetailsCard.component.scss
+│   │   │       │   └── pokemonDetailsCard.component.ts
+│   │   │       │
+│   │   │       ├── pokemonDetails.component.html
+│   │   │       └── pokemonDetails.component.ts
+│   │   │
+│   │   │
+│   │   ├── resolvers\
+│   │   │   └── pokedex-resolver.service.ts
+│   │   │
+│   │   ├── services\
+│   │   │   ├── loader.service.ts
+│   │   │   └── pokedex.service.ts
+│   │   │
+│   │   ├── types\
+│   │   │   ├── navItem.model.ts
+│   │   │   ├── pokemon.model.ts
+│   │   │   └── simplePokemon.model.ts
+│   │   │
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
 │   │
-│   ├── 404.html
+│   ├── assets\
+│   │   │
+│   │   ├── fonts\
+│   │   │   └── Pokemon Solid.ttf
+│   │   │
+│   │   ├── images\
+│   │   │   ├── angular-logo.png
+│   │   │   └── github-logo.png
+│   │   │
+│   │   └── .gitkeep
+│   │
+│   ├── environments\
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   │
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── apple-touch-icon.png
+│   ├── browserconfig.xml
 │   ├── favicon-16x16.png
 │   ├── favicon-32x32.png
 │   ├── favicon.ico
 │   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   └── manifest.json
-│
-├── snapshot\
-│   ├── VueDex1.png
-│   └── VueDex2.png
-│
-├── src\
-│   │
-│   ├── assets\
-│   │   ├── github-logo.png
-│   │   └── vue-logo.png
-│   │
-│   ├── components\
-│   │   │
-│   │   ├── ErrorComponent\
-│   │   │   └── ErrorComponent.vue
-│   │   │
-│   │   ├── PokeSearch\
-│   │   │   └── PokeSearch.vue
-│   │   │
-│   │   ├── Pokedex\
-│   │   │   │
-│   │   │   ├── Card\
-│   │   │   │   └── Card.vue
-│   │   │   │
-│   │   │   └── Pokedex.vue
-│   │   │
-│   │   ├── PokemonDetailsCard\
-│   │   │   └── PokemonDetailsCard.vue
-│   │   │
-│   │   └── layout\
-│   │       │
-│   │       ├── TheToolbar\
-│   │       │   │
-│   │       │   ├── MainNavigation\
-│   │       │   │   │
-│   │       │   │   ├── NavigationItems\
-│   │       │   │   │   │
-│   │       │   │   │   ├── NavigationItem\
-│   │       │   │   │   │   └── NavigationItem.vue
-│   │       │   │   │   │
-│   │       │   │   │   └── NavigationItems.vue
-│   │       │   │   │
-│   │       │   │   └── MainNavigation.vue
-│   │       │   │
-│   │       │   └── TheToolbar.vue
-│   │       │
-│   │       ├── hocs\
-│   │       │   └── PokedexWrapper.vue
-│   │       │
-│   │       ├── ThePokeBall.vue
-│   │       └── TheSpinner.vue
-│   │
-│   │
-│   ├── interfaces\
-│   │   ├── Pokemon.ts
-│   │   └── SimplePokemon.ts
-│   │
-│   ├── pages\
-│   │   ├── NotFound.vue
-│   │   ├── PokedexPage.vue
-│   │   ├── PokemonDetails.vue
-│   │   └── PokemonSearch.vue
-│   │
-│   ├── router\
-│   │   └── index.ts
-│   │
-│   ├── styles\
-│   │   ├── _card.scss
-│   │   ├── _error-component.scss
-│   │   ├── _global.scss
-│   │   ├── _main-navigation.scss
-│   │   ├── _navigation-item.scss
-│   │   ├── _navigation-items.scss
-│   │   ├── _pokeball.scss
-│   │   ├── _pokedex-wrapper.scss
-│   │   ├── _pokedex.scss
-│   │   ├── _pokemon-details.scss
-│   │   └── _toolbar.scss
-│   │
-│   ├── App.vue
 │   ├── main.ts
-│   └── shims-vue.d.ts
+│   ├── manifest.json
+│   ├── mstile-150x150.png
+│   ├── site.webmanifest
+│   └── styles.scss
 │
-├── tests\
-│   │
-│   ├── e2e\
-│   │   │
-│   │   ├── plugins\
-│   │   │   └── index.js
-│   │   │
-│   │   ├── specs\
-│   │   │   └── test.js
-│   │   │
-│   │   ├── support\
-│   │   │   ├── commands.js
-│   │   │   └── index.js
-│   │   │
-│   │   └── .eslintrc.js
-│   │
-│   └── unit\
-│       └── example.spec.ts
-│
-│
-├── .dockerignore
+├── .editorconfig
 ├── .gitignore
+├── LICENSE
 ├── README.md
-├── babel.config.js
-├── cypress.json
+├── angular.json
 ├── package-lock.json
 ├── package.json
+├── tsconfig.app.json
 ├── tsconfig.json
-├── vue.config.js
-└── vue.config.ts
+└── tsconfig.spec.json
 ```
 
 
-O output de produção de `npx vue create app`, que pode ser visualizado no branch`gh-pages` (encarregado da implementação/deployment do app):
+O output de produção de `npm run build`, que pode ser visualizado no branch`gh-pages` (encarregado da implementação/deployment do app):
 
 
 ```
