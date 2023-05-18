@@ -1,28 +1,28 @@
+// MODULES
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PokedexPageModule } from './modules/pokedex.module';
+import { PokemonDetailsModule } from './modules/pokemonDetails.module';
+import { SharedModule } from './modules/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
+// VARIABLES/TOKENS
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/UI/toolbar/toolbar.component';
 import { MainNavigationComponent } from './components/UI/toolbar/mainNavigation/mainNavigation.component';
 import { NavigationItemsComponent } from './components/UI/toolbar/mainNavigation/navigationItems/navigationItems.component';
-import { PokeBallComponent } from './components/UI/pokeBall/pokeBall.component';
-import { SpinnerComponent } from './components/UI/spinner/spinner.component';
 import { ErrorComponent } from './components/errorComponent/errorComponent.component';
 
-import { PokemonDetailsCardComponent } from './pages/PokemonDetailsPage/pokemonDetailsCard/pokemonDetailsCard.component';
-import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.component';
-import { CommonModule } from '@angular/common';
-// import { PokedexComponent } from './pages/PokedexPage/pokedex/pokedex.component';
-import { PokedexPageModule } from './modules/pokedex.module';
-import { PokemonDetailsModule } from './modules/pokemonDetails.module';
+// SERVICES
 import { PokedexService } from 'src/app/services/pokedex.service';
-import { SharedModule } from './modules/shared.module';
+
+// INTERCEPTORS
 import { LoadingInterceptor } from './interceptors/interceptor';
-// import { PokedexPageComponent } from './pages/PokedexPage/pokedex.component';
-// import { PokemonDetailsPageComponent } from './pages/PokemonDetailsPage/pokemonDetails.component';
-// import { PokemonSearchPageComponent } from './pages/PokemonSearchPage/PokemonSearch.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +31,6 @@ import { LoadingInterceptor } from './interceptors/interceptor';
     ToolbarComponent,
     MainNavigationComponent,
     NavigationItemsComponent,
-    // PokeBallComponent,
-    // SpinnerComponent,
-    // PokedexWrapperComponent,
-    // PokedexComponent,
-    // PokedexPageComponent
-    // PokeSearchComponent,
-    // CardComponent,
-    // PokemonDetailsCardComponent,
-
-    // PokemonSearchPageComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -48,10 +38,7 @@ import { LoadingInterceptor } from './interceptors/interceptor';
     HttpClientModule,
     CommonModule,
     SharedModule,
-    // PokedexPageModule,
-    // PokemonDetailsModule,
   ],
-  // exports: [PokedexWrapperComponent],
 
   providers: [
     PokedexService,
