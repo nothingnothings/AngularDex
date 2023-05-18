@@ -17,12 +17,12 @@
 
 ## Introdução
 
-![VueDex](snapshot/AngularDex1.png)
+![AngularDex](snapshot/AngularDex1.png)
 
 
 
 
-![VueDex](snapshot/AngularDex2.png)
+![AngularDex](snapshot/AngularDex2.png)
 
 
 
@@ -350,22 +350,22 @@ O arquivo tsconfig.json utilizado no projeto:
 Para usar este projeto, clone-o usando Git:
 
 1. Rode `git clone` para clonar o projeto dentro de seu repositório local Git
-2. Rode `npm install` para instalar todas as dependências (`vue`, `axios`, etc)
-3. Rode `npm run build` para criar a versão de produção/implementação (production/deployment) do aplicativo (produzido no diretório `/dist`)
+2. Rode `npm install` para instalar todas as dependências (`vue`, `angular`, etc)
+3. Rode `npm run build` para criar a versão de produção/implementação (production/deployment) do aplicativo (produzido no diretório `/dist/angular-dex`)
 4. Sirva os arquivos de produção/implementação localmente ou na web (com a ajuda de algum serviço de hospedagem)
 5. Na página "Pokédex", clique/toque no Pokémon cujas características deseja visualizar. Na página "Procurar por um Pokémon", digite o nome do Pokémon que deseja buscar
 
 
 ## Destaques (features)
 
-- Aplicativo página única, sem recarregamentos de página, arquivo HTML único (Vue.js)
-- Aplicativo dividido em diversos componentes, alguns deles utilizados mais de uma única vez, em páginas distintas (filosofia de design da library Vue.js)
+- Aplicativo página única, sem recarregamentos de página, arquivo HTML único (Angular)
+- Aplicativo dividido em diversos componentes, alguns deles utilizados mais de uma única vez, em páginas distintas (filosofia de design da library Angular)
 - Design criado com CSS (compilado a partir de arquivos .scss)
 - Design responsivo (adaptativo, suporte a dispositivos móveis e desktop) criado com Bootstrap, Flexbox e media queries
-- Utilização dos recursos GitHub Actions e GitHub Pages com a ferramenta `npx vue create app` para construir um workflow ininterrupto (transição da fase de desenvolvimento para a fase de produção/implementação). A partir do comando `git push`, o GitHub Actions transfere o conteúdo do branch `master` para dentro do branch `gh-pages`, o qual então implementa/faz deploy do app no endereço https://nothingnothings.github.io/VueDex/
+- Utilização dos recursos GitHub Actions e GitHub Pages com a ferramenta `ng new project-name` para construir um workflow ininterrupto (transição da fase de desenvolvimento para a fase de produção/implementação). A partir do comando `git push`, o GitHub Actions transfere o conteúdo do branch `master` para dentro do branch `gh-pages`, o qual então implementa/faz deploy do app no endereço https://nothingnothings.github.io/AngularDex/
 - Utilização do pacote/ferramenta Axios para a comunicação com o backend "pokeapi.co", que fornece os dados dos Pokémons (nomes, IDs, peso, altura, tipos, abilidades, etc) ao aplicativo Vue
-- Utilização de recursos integrais da library Vue.js, como as options "``data(){}``", "``components:{}``", "``methods:{}``", "``computed:{}``", "``watch:{}``" e "``props:{}``"
-- Utilização de hooks da library Vue.js, como "``created(){}``" e "``mounted(){}``"
+- Utilização de directives da library Angular, como "``*ngIf``", "``*ngFor``", "``[ngClass]``" e "``[ngStyle]``
+- Utilização de recursos da library Vue.js como "``modules``", "``components``", "``services``" e "``interceptors``"
 - Spinner customizado de carregamento (pokébola)
 - Página de erro customizada, com output da mensagem/motivo do erro ao usuário
 - Favicon compatível com diversos dispositivos
