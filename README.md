@@ -1,4 +1,4 @@
-<h1 align="center">VueDex - LeafGreen - Uma Pokédex construída com Vue.js</h1>
+<h1 align="center">AngularDex - FireRed - Uma Pokédex construída com Angular</h1>
 <p align="center">
   <img src="src/android-chrome-512x512.png" alt="AngularDex-logo" width="120px" height="120px"/>
   <br>
