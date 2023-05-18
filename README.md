@@ -30,7 +30,7 @@ Single Page Application (SPA) construída com a library/framework Angular (ng ne
 
 O app foi inicializado/bootstrapped com o comando/environment `ng new project-name` e implantado (deploy) com o GitHub Pages, assistido pelo recurso GitHub Actions.
 
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nothingnothings/AngularDex?style=flat-square)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nothingnothings/AngularDex/master)
 [![HitCount](https://hits.dwyl.com/nothingnothings/AngularDex.svg?style=flat-square)](http://hits.dwyl.com/nothingnothings/AngularDex)
 
 
