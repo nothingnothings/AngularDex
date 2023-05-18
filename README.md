@@ -17,12 +17,12 @@
 
 ## Introdução
 
-![AngularDex](snapshot/AngularDex1.png)
+![AngularDex](snapshots/AngularDex1.png)
 
 
 
 
-![AngularDex](snapshot/AngularDex2.png)
+![AngularDex](snapshots/AngularDex2.png)
 
 
 
