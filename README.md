@@ -386,7 +386,7 @@ Para usar este projeto, clone-o usando Git:
 - Design responsivo (adaptativo, suporte a dispositivos móveis e desktop) criado com Bootstrap, Flexbox e media queries
 - Utilização dos recursos GitHub Actions e GitHub Pages com a ferramenta `ng new project-name` para construir um workflow ininterrupto (transição da fase de desenvolvimento para a fase de produção/implementação). A partir do comando `git push`, o GitHub Actions transfere o conteúdo do branch `master` para dentro do branch `gh-pages`, o qual então implementa/faz deploy do app no endereço https://nothingnothings.github.io/AngularDex/
 - Utilização do pacote/ferramenta Axios para a comunicação com o backend "pokeapi.co", que fornece os dados dos Pokémons (nomes, IDs, peso, altura, tipos, abilidades, etc) ao aplicativo Vue
-- Utilização de directives da library Angular, como "``*ngIf``", "``*ngFor``", "``[ngClass]``" e "``[ngStyle]``
+- Utilização de directives da library Angular, como "``*ngIf``", "``*ngFor``", "``[ngClass]``" e "``[ngStyle]``"
 - Utilização de recursos da library Vue.js como "``modules``", "``components``", "``services``" e "``interceptors``"
 - Spinner customizado de carregamento (pokébola)
 - Página de erro customizada, com output da mensagem/motivo do erro ao usuário
