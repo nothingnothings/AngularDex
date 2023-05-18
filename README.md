@@ -229,46 +229,25 @@ O output de produção de `npm run build`, que pode ser visualizado no branch`gh
 ```
 .\
 │
-├── .vscode\
-│   └── settings.json
+├── assets\
+│   │
+│   ├── fonts\
+│   │   └── Pokemon Solid.ttf
+│   │
+│   └── images\
+│       ├── angular-logo.png
+│       └── github-logo.png
 │
-├── css\
-│   ├── 214.72065e3b.css
-│   ├── 252.efe5c231.css
-│   ├── 861.72065e3b.css
-│   └── app.87d71669.css
-│
-├── fonts\
-│   ├── Pokemon Solid.c76e2194.ttf
-│   └── Pokemon Solid.ttf
-│
-├── img\
-│   ├── github-logo.e4cf49de.png
-│   └── vue-logo.ff417bdf.png
-│
-├── js\
-│   ├── 214.d016785f.js
-│   ├── 214.d016785f.js.map
-│   ├── 252.0154d851.js
-│   ├── 252.0154d851.js.map
-│   ├── 656.9f743450.js
-│   ├── 656.9f743450.js.map
-│   ├── 861.1067c55d.js
-│   ├── 861.1067c55d.js.map
-│   ├── app.0d4014c8.js
-│   ├── app.0d4014c8.js.map
-│   ├── chunk-vendors.ae3a0b93.js
-│   └── chunk-vendors.ae3a0b93.js.map
 │
 ├── .nojekyll
-├── 404.html
-├── favicon-16x16.png
-├── favicon-32x32.png
+├── 3rdpartylicenses.txt
+├── Pokemon Solid.c76e219434a39b20.ttf
 ├── favicon.ico
 ├── index.html
-├── logo192.png
-├── logo512.png
-└── manifest.json
+├── main.b4397b76ab87e8f1.js
+├── polyfills.fca542ed0eca6182.js
+├── runtime.363954a89fca85d6.js
+└── styles.4522b103f35ddef3.css
 ```
 
 
