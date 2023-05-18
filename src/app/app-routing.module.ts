@@ -8,11 +8,6 @@ import { PokeSearchComponent } from './pages/PokedexPage/pokeSearch/pokeSearch.c
 import { PokedexResolverService } from './resolvers/pokedex-resolver.service';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '/pokedex',
-  //   pathMatch: 'full',
-  // },
   {
     path: 'pokedex',
     component: PokedexComponent,
