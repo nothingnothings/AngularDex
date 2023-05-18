@@ -25,12 +25,10 @@ const routes: Routes = [
       },
     ],
   },
-
   {
     path: 'pokedex/:pokemonId',
     component: PokemonDetails,
   },
-
   {
     path: '**',
     redirectTo: '/pokedex',
