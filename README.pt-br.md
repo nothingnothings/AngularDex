@@ -1,9 +1,9 @@
-<h1 align="center">AngularDex - FireRed - A Pokédex built with Angular</h1>
+<h1 align="center">AngularDex - FireRed - Uma Pokédex construída com Angular</h1>
 <p align="center">
   <img src="src/android-chrome-512x512.png" alt="AngularDex-logo" width="120px" height="120px"/>
   <br>
-  <i>This webApp is an example of an application that can be built with the 
-    <br>JavaScript framework Angular.</i>
+  <i>Este webApp é um exemplo de aplicativo que pode ser construído com o 
+    <br>framework JavaScript Angular.</i>
   <br>
 </p>
 
@@ -15,7 +15,7 @@
 
 
 
-## Introduction
+## Introdução
 
 ![AngularDex](snapshots/AngularDex1.png)
 
@@ -26,11 +26,9 @@
 
 
 
-Single Page Application (SPA) built with the Angular library/framework (ng new project-name). The app's design was inspired by the site [https://pokeapi.co](https://pokeapi.co). Bootstrap, Flexbox, and media queries were used to create a responsive design (attempting to provide the best possible experience across multiple screen configurations/devices, both desktop and mobile, with different resolutions). Following the philosophy of the Angular Framework, the app was structured using features such as modules, components, services, and interceptors.
+Single Page Application (SPA) construída com a library/framework Angular (ng new nome-do-projeto). O design do app foi inspirado pelo site [https://pokeapi.co](https://pokeapi.co). Bootstrap, Flexbox e media queries foram utilizados na construção do design responsivo (tentativa de fornecer a melhor experiência possível a múltiplas configurações de tela/dispositivos, tanto desktop como mobile, com diferentes resoluções). Seguindo a filosofia do Framework Angular, o app foi constituído através do uso de recursos como modules, components, services e interceptors.
 
-
-The app was initialized/bootstrapped with the command/environment `ng new project-name` and deployed with GitHub Pages, assisted by GitHub Actions.
-
+O app foi inicializado/bootstrapped com o comando/environment `ng new project-name` e implantado (deploy) com o GitHub Pages, assistido pelo recurso GitHub Actions.
 
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/nothingnothings/AngularDex/master)
 [![en](https://img.shields.io/badge/lang-en-red.svg?style=flat-square)](https://github.com/nothingnothings/AngularDex)
@@ -40,26 +38,26 @@ The app was initialized/bootstrapped with the command/environment `ng new projec
 
 
  
-## Technologies
+## Tecnologias
  
-Some of the languages and libraries that were used:
+ Algumas das linguagens e libraries empregadas:
+ 
+ - Node Package Manager (bootstrapping e gerenciamento do aplicativo React)
+ - HTML5
+ - SASS (para melhor organização das regras de CSS, nested rules, etc)
+ - CSS3 (animações, Flexbox, media queries)
+ - Angular versão 16 (framework JavaScript, que propõe a estruturação integral do app em Angular modules, components, services e interceptors)
+ - Typescript (para a type safety dos objetos recebidos pelos endpoints do backend; Models e Interfaces, etc.)
+ - Angular Router (para a navegação entre as diferentes "páginas" do aplicativo)
+ - Gerenciamento de state (dois states principais: o central, providenciado pelo service de "pokedex.service.ts", usado nas páginas "Pokedex" e "Procurar por um Pokémon", e o "local", usado  na página "PokemonDetails", acessada pela route "/pokedex/:idDoPokemon")
+ - Bootstrap (usado na barra de navegação e no posicionamento geral dos elementos na página, com "container", "row" e "col")
+ - Axios (para a comunicação, requests e responses, entre este aplicativo frontend e o backend visado/buscado por ele, os API endpoints disponibilizados pelo domínio "pokeapi.co". Utilizado na página "PokémonDetails")
+ - Http Module (usado para a comunicação entre o aplicativo Angular e o backend visado por ele; visto na página "Pokédex")
+ 
+ 
+## Estrutura de Diretórios do Projeto
 
-- Node Package Manager (bootstrapping and managing the React application)
-- HTML5
-- SASS (for better organization of CSS rules, nested rules, etc.)
-- CSS3 (animations, Flexbox, media queries)
-- Angular version 16 (JavaScript framework that proposes the comprehensive structuring of the app in Angular modules, components, services, and interceptors)
-- TypeScript (for type safety of objects received from backend endpoints; Models and Interfaces, etc.)
-- Angular Router (for navigation between the different "pages" of the application)
-- State management (two main states: the central one provided by the "pokedex.service.ts" service, used in the "Pokedex" and "Search for a Pokémon" pages, and the "local" state used on the "PokemonDetails" page, accessed via the route "/pokedex/:idDoPokemon")
-- Bootstrap (used for the navigation bar and overall positioning of elements on the page, with "container", "row", and "col")
-- Axios (for communication, requests, and responses between this frontend application and the targeted backend, the API endpoints provided by the "pokeapi.co" domain. Used on the "PokemonDetails" page)
-- Http Module (used for communication between the Angular application and the targeted backend; seen on the "Pokedex" page)
- 
- 
-## Project Directory Structure
-
-The development environment (created using the tool/environment/workflow `ng new project-name`):
+O ambiente de desenvolvimento (com utilização da ferramenta/environment/worfklow `ng new project-name`):
 
 
 ```
@@ -226,8 +224,7 @@ The development environment (created using the tool/environment/workflow `ng new
 ```
 
 
-The production output of `npm run build`, which can be viewed in the `gh-pages` branch (responsible for the app's deployment):
-
+O output de produção de `npm run build`, que pode ser visualizado no branch`gh-pages` (encarregado da implementação/deployment do app):
 
 
 ```
@@ -257,9 +254,9 @@ The production output of `npm run build`, which can be viewed in the `gh-pages` 
 
 
 
-## Project Configuration Files (package.json and tsconfig.json)
+## Arquivos de Configuração do Projeto (package.json e tsconfig.json)
 
-The package.json file used in the project:
+O arquivo package.json utilizado no projeto:
 
 ```
 {
@@ -307,7 +304,7 @@ The package.json file used in the project:
 ```
 
 
-The tsconfig.json file used in the project:
+O arquivo tsconfig.json utilizado no projeto: 
 
 ```
 
@@ -349,29 +346,29 @@ The tsconfig.json file used in the project:
 
 ```
 
-## Installation/Usage
+## Instalação/Utilização 
 
 
-To use this project, clone it using Git:
+Para usar este projeto, clone-o usando Git:
 
-1. Run `git clone` to clone the project into your local Git repository.
-2. Run `npm install` to install all dependencies (`axios`, `angular`, etc.).
-3. Run `npm run build` to create the production/deployment version of the application (produced in the `/dist/angular-dex` directory).
-4. Serve the production/deployment files locally or on the web (with the help of a hosting service).
-5. On the "Pokédex" page, click/tap on the Pokémon whose characteristics you wish to view. On the "Search for a Pokémon" page, type the name of the Pokémon you want to search for.
+1. Rode `git clone` para clonar o projeto dentro de seu repositório local Git
+2. Rode `npm install` para instalar todas as dependências (`axios`, `angular`, etc)
+3. Rode `npm run build` para criar a versão de produção/implementação (production/deployment) do aplicativo (produzido no diretório `/dist/angular-dex`)
+4. Sirva os arquivos de produção/implementação localmente ou na web (com a ajuda de algum serviço de hospedagem)
+5. Na página "Pokédex", clique/toque no Pokémon cujas características deseja visualizar. Na página "Procurar por um Pokémon", digite o nome do Pokémon que deseja buscar
 
 
-## Features
+## Destaques (features)
 
-- Single Page Application (SPA) with no page reloads, single HTML file (Angular).
-- The application is divided into various components, some of which are reused in different pages (design philosophy of the Angular library).
-- Design created with CSS (compiled from .scss files).
-- Responsive design (adaptive, supporting mobile and desktop devices) created with Bootstrap, Flexbox, and media queries.
-- Utilization of GitHub Actions and GitHub Pages with the tool `ng new project-name` to build a seamless workflow (transition from development to production/deployment phase). From the `git push` command, GitHub Actions transfers the contents of the `master` branch to the `gh-pages` branch, which then deploys the app at https://nothingnothings.github.io/AngularDex/.
-- Use of the Axios library for communication with the backend "pokeapi.co", providing Pokémon data (names, IDs, weight, height, types, abilities, etc.) to the Vue application.
-- Usage of Angular directives such as ``*ngIf``, ``*ngFor``, ``[ngClass]``, and ``[ngStyle]``.
-- Usage of Angular features like ``modules``, ``components``, ``services``, and ``interceptors``.
-- Custom loading spinner (Pokéball).
-- Custom error page with output of the error message/reason to the user.
-- Favicon compatible with various devices.
+- Aplicativo página única, sem recarregamentos de página, arquivo HTML único (Angular)
+- Aplicativo dividido em diversos componentes, alguns deles utilizados mais de uma única vez, em páginas distintas (filosofia de design da library Angular)
+- Design criado com CSS (compilado a partir de arquivos .scss)
+- Design responsivo (adaptativo, suporte a dispositivos móveis e desktop) criado com Bootstrap, Flexbox e media queries
+- Utilização dos recursos GitHub Actions e GitHub Pages com a ferramenta `ng new project-name` para construir um workflow ininterrupto (transição da fase de desenvolvimento para a fase de produção/implementação). A partir do comando `git push`, o GitHub Actions transfere o conteúdo do branch `master` para dentro do branch `gh-pages`, o qual então implementa/faz deploy do app no endereço https://nothingnothings.github.io/AngularDex/
+- Utilização do pacote/ferramenta Axios para a comunicação com o backend "pokeapi.co", que fornece os dados dos Pokémons (nomes, IDs, peso, altura, tipos, abilidades, etc) ao aplicativo Vue
+- Utilização de directives da library Angular, como "``*ngIf``", "``*ngFor``", "``[ngClass]``" e "``[ngStyle]``"
+- Utilização de recursos da library Angular como "``modules``", "``components``", "``services``" e "``interceptors``"
+- Spinner customizado de carregamento (pokébola)
+- Página de erro customizada, com output da mensagem/motivo do erro ao usuário
+- Favicon compatível com diversos dispositivos
 
