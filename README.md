@@ -1,4 +1,4 @@
-<h1 align="center">AngularDex - FireRed - A Pokédex built with Angular</h1>
+<h1 align="center">AngularDex - FireRed - A Pokédex Built with Angular</h1>
 <p align="center">
   <img src="src/android-chrome-512x512.png" alt="AngularDex-logo" width="120px" height="120px"/>
   <br>
